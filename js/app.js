@@ -3,25 +3,22 @@
 var app = angular.module("direct", []);
 
 app.controller("MainController", function($scope){
-	$scope.data = {
-		name: "Csati"
-	};
-
-	$scope.click = function(){
-		$scope.data.name = "clicked";
-	};
-});
-
-app.directive("child", function(){
-	return {
-		templateUrl: "html/child.html",
-		scope: {
-			prop1: "="
-		},
-		link: function(scope){
-			scope.click = function(){
-				scope.prop1.name = "clicked in child";
-			};
+	$scope.side = "closed";
+	$scope.decrease = function(){
+		if($scope.side === "large"){
+			$scope.side = "small";
 		}
-	}
+		else if($scope.side === "small"){
+			$scope.side = "closed";
+		}
+	};
+
+	$scope.increase = function(){
+		if($scope.side === "closed"){
+			$scope.side = "small";
+		}
+		else if($scope.side === "small"){
+			$scope.side = "large";
+		}
+	};
 });

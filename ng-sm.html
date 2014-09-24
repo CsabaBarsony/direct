@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="direct">
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>ng-sm</title>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body ng-controller="MainController">
+	<div id="side" ng-class="side">
+		<a href="" id="close" ng-click="close()">&#x2715;</a>
+		<div id="button">
+			<a href="" ng-click="decrease()" ng-show="side === 'small' || side === 'large'">&lt;</a>
+			<a href="" ng-click="increase()" ng-show="side === 'closed' || side === 'small'">&gt;</a>
+		</div>
+	</div>
+
+<script src="lib/angular.js"></script>
+<script src="lib/state-machine.js"></script>
+<script src="js/sm_app.js"></script>
+</body>
+</html>
